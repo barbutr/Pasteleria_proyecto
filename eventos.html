@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD: metadatos, estilos y scripts -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="css/eventos.css">
+    <script src="index.js" defer></script>
+    <script src="eventos.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaisei+Decol&family=Mochiy+Pop+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<!-- BODY: contenido visible del sitio -->
+<body>
+    <!-- HEADER: navegacion principal -->
+    <header class="Header">
+        <button class="Header-btn">
+            <svg class="Header-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+        </button>
+        <h1 class="Header-logo">
+            <a href="index.html" class="Header-a">
+                <img loading="lazy" src="assets/logo_petit_rojo.png" alt="logo_petit_rojo" class="Header-img">
+            </a>
+        </h1>
+        <nav class="Header-nav">
+            <div class="Header-menu">
+                <ul class="Header-list">
+                    <li class="Header-option"><a href="nosotros.html" class="Header-section">Nosotros</a></li>
+                    <li class="Header-option"><a href="carta.html" class="Header-section">Carta</a></li>
+                    <li class="Header-option"><a href="eventos.html" class="Header-section">Eventos</a></li>
+                    <li class="Header-option"><a href="contactanos.html" class="Header-section">Contáctanos</a></li>
+                </ul>
+            </div>
+
+            <div class="Header-icons">
+                <ul class="Header-ul">
+                    <li class="Header-li">
+                        <a class="Header-link" href="">
+                            <svg class="Header-icon Header-icon--user" xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="Header-li">
+                        <a class="Header-link" href="">
+                            <svg class="Header-icon Header-icon--cart" xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                            </svg>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- hero main -->
+    <!-- MAIN: contenido principal de la pagina -->
+<main>
+        <div class="Slider">
+            <div class="Slider-title">
+                Catering
+            </div>
+            <!-- Comienzo texto -->
+            <div class="Slider-content">
+                <section class="Slider-item active">
+                    <h1 class="Slider-product Slider-product--1">Mini postres</h1>
+                    <p class="Slider-description">Nuestras tartas en versión mini. Limón, frambuesa, pistacho,
+                        zanahoria,
+                        banoffee... La bandeja perfecta para eventos, desayunos y meriendas</p>
+                    <button class="Slider-button">Solicitar información</button>
+
+                </section>
+                <section class="Slider-item">
+                    <h1 class="Slider-product Slider-product--2">Bandeja Deluxe</h1>
+                    <p class="Slider-description">Bandeja de madera con una selección de los mejores cruasanes,
+sándwiches, pulguitas, saladitos</p>
+                    <button class="Slider-button">Solicitar información</button>
+
+                </section>
+                <section class="Slider-item">
+                    <h1 class="Slider-product Slider-product--3">Pulguitas Saladas</h1>
+                    <p class="Slider-description"> Bandejas de mini pulguitas de pan de centeno, semillas o espelta con rellenos
+variados. Jamón ibérico de bellota, pastrami, salmón ahumado</p>
+                    <button class="Slider-button">Solicitar información</button>
+
+                </section>
+                <ul class="Slider-img">
+                    <li class="Slider-li" style="--i: 1">
+                        <img loading="lazy" src="assets/Eventos/ChatGPT Image 26 abr 2026, 18_13_32 (1).webp" alt="" srcset="">
+                    </li>
+                    <li class="Slider-li" style="--i: 2">
+                        <img loading="lazy" src="assets/Eventos/edited-photo (2).webp" alt="" srcset="">
+                    </li>
+                    <li class="Slider-li" style = "--i: 3">
+                        <img loading="lazy" src="assets/Eventos/edited-photo (3).webp" alt="" srcset="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <button id="next"><</button>
+        <button id="prev">></button>
+    </main>
+
+</body>
+
+</html>
