@@ -1,0 +1,743 @@
+/* Variables globales de tipografia, color y escalas responsivas */
+:root {
+    font-size: 100%;
+    font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
+    hyphens: none;
+
+
+    --color-primary: #B80943;
+    --color-secondary: #F2B861;
+    --color-bg: #FEFBF4;
+    --color-text: #1d1d1b;
+
+    --font-title: 'Mochiy Pop One', sans-serif;
+    --font-subtitle: 'Kaisei Decol';
+    --font-text: 'Inter', sans-serif;
+
+
+    --fs-h1: clamp(2rem, 6vw, 3rem);
+    --fs-h2: clamp(1.2rem, 3vw, 2rem);
+    --fs-p: clamp(0.8rem, 2vw, 1.5rem);
+    --fs-big: clamp(4rem, 6vw, 3rem);
+}
+
+/* Reset base para normalizar estilos entre navegadores */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+*::before,
+*::after {
+    display: block;
+}
+
+/* Estilo base de elementos multimedia */
+img,
+picture,
+video,
+iframe,
+figure,
+canvas {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: initial;
+    object-fit: cover;
+    object-position: center center;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+}
+
+p {
+    hyphens: none;
+}
+
+
+p a {
+    display: inline;
+
+}
+
+
+li,
+menu,
+summary {
+    list-style-type: none;
+}
+
+ol {
+    counter-reset: revert;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em,
+pre,
+code,
+mark,
+del {
+    font: inherit;
+    line-height: 1em;
+    text-decoration: none;
+    color: inherit;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+    hyphens: none;
+}
+
+mark {
+    background-color: transparent;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: none;
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+    font: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    appearance: none;
+}
+
+fieldset {
+    border: none;
+}
+
+::placeholder {
+    color: unset;
+}
+
+button,
+label {
+    cursor: pointer;
+    hyphens: none;
+}
+
+table,
+tr,
+td,
+th,
+tbody,
+thead,
+tfoot {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: inherit;
+}
+
+svg {
+    width: 2rem;
+    height: initial;
+    display: block;
+
+}
+
+/* Base del documento */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    line-height: 1.5em;
+    color: inherit;
+    hyphens: auto;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    background-color: rgb(250, 240, 230);
+
+
+}
+
+/* Header: barra superior de navegacion */
+.Header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+
+
+
+
+
+}
+
+.Header-btn {
+
+    display: none;
+
+}
+
+.Header-svg {
+    color: var(--color-primary);
+}
+
+.Header-logo {
+
+    width: 8rem;
+    min-height: fit-content;
+
+
+}
+
+.Header-a {}
+
+.Header-img {}
+
+.Header-section {
+    color: var(--color-primary);
+}
+
+.Header-nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Header-menu {}
+
+.Header-list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.Header-option {}
+
+.Header-icons {}
+
+.Header-ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem;
+
+}
+
+.Header-li {}
+
+.Header-link {}
+
+/* Icono de carrito y contador de items */
+
+.Header-icon--user {
+    color: var(--color-primary);
+    width: 1.5rem;
+}
+
+.Header-icon--cart {
+    color: var(--color-primary);
+    width: 1.5rem;
+}
+
+.Header-cart {
+    position: relative;
+}
+
+.Cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: var(--color-primary);
+    color: white;
+    font-size: .7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* Panel lateral del carrito (off-canvas) */
+.Cart-panel {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 20rem;
+    height: 100%;
+    background: white;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.Cart-panel.open {
+    /* Estado visible al abrir el carrito */
+    right: 0;
+}
+
+.Cart-header,
+.Cart-footer {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.Cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.Cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+@media(max-width:950px) {
+    /* Ajustes de cabecera para tablet */
+    body {
+        overflow: hidden;
+    }
+
+    .Header-logo {
+        position: absolute;
+        top: center;
+        left: 40%;
+        width: 7rem;
+
+    }
+
+    .Header-btn {
+        display: block;
+    }
+
+    .Header-list {
+        display: none;
+    }
+
+
+}
+
+@media(max-width:500px) {
+    /* Ajustes de cabecera para movil */
+    body {
+        overflow: hidden;
+    }
+
+    .Header-nav {
+        display: none;
+    }
+
+    .Header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+
+
+    }
+
+    .Header-btn {
+        position: sticky;
+        top: start;
+        left: start;
+        margin: 1rem;
+
+    }
+
+    .Header-logo {
+        position: absolute;
+        top: center;
+        left: 40%;
+        width: 5rem;
+
+
+    }
+
+}
+
+
+/* Seccion principal de carta */
+.Menu {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 0;
+}
+
+/* Encabezado introductorio de la carta */
+.Menu-hero {
+    margin-bottom: 4rem;
+    gap: 2rem;
+}
+
+/* Titulos y descripcion */
+.Menu-title {
+    font-size: 3rem;
+    font-family: var(--font-title);
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+
+}
+
+.Menu-text {
+    max-width: 1000px;
+    line-height: 1.6;
+    font-size: .95rem;
+}
+
+/* Filtros por categoria de producto */
+.Menu-filters {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.Menu-filters button {
+    padding: .5rem 1.2rem;
+    border-radius: 2rem;
+    border: 1px solid var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.Menu-filters button:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.Menu-filters .isActive {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-text);
+}
+
+
+/* Rejilla responsiva de productos */
+.Menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjeta de producto */
+.Card {
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform .2s ease;
+
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.Card-image {
+    width: 100%;
+    max-height: 11.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+}
+
+.Card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Card-body {
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.Card-title {
+    font-family: var(--font-title);
+    color: var(--color-primary);
+    font-size: var(--fs-p);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.Card-text {
+    font-size: .85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.Card-bottom {
+    /* Mantiene precio y cantidad alineados al final de la card */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: auto;
+
+}
+
+.Card-price {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.Card-euro {
+    width: 1.375rem;
+    height: 1.375rem;
+    background: var(--color-primary);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: .7rem;
+}
+
+.Card-quantity {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.Card-quantity button {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.Card-btn {
+    /* Boton principal de accion */
+    width: 100%;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: .6rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.Card-btn:hover {
+    background: var(--color-secondary);
+}
+
+.number {
+    transition: transform 0.15s ease;
+}
+
+.number.bump {
+    /* Escala temporal aplicada desde JS al cambiar cantidad */
+    transform: scale(1.2);
+}
+
+
+
+/* Ajustes responsivos del bloque de menu/cards */
+@media (max-width: 768px) {
+    .Menu-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .Menu-text {
+        margin: auto;
+    }
+
+    .Menu-filters {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .Menu-visual img {
+        width: 60%;
+    }
+
+    .Card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .Card-image {
+        width: 100%;
+        height: 11.25rem;
+        object-fit: cover;
+
+    }
+
+
+}
+
+/* Footer: enlaces, redes y legal */
+.Footer {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: 3rem 2rem;
+}
+
+.Footer-wrapper {
+    max-width: 1200px;
+    margin: 1rem auto 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+
+.Footer-brand img {
+    width: 18vh;
+
+}
+
+
+.Footer-list,
+.Footer-legal ul,
+.Footer-icons {
+    padding: 0;
+    margin: 0;
+
+}
+
+.Footer-li {
+    margin-bottom: 1rem;
+}
+
+
+.Footer a {
+    color: var(--color-bg);
+    font-size: var(--fs-p);
+    font-family: var(--font-text);
+}
+
+.Footer a:hover {
+    text-decoration: underline;
+}
+
+.Footer-social p {
+    margin-bottom: 1rem;
+    font-size: var(--fs-p);
+    line-height: 1.5;
+}
+
+.Footer-icons {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+.Footer-link {
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--color-bg);
+    border-radius: 50%;
+
+    transition: all 0.3s ease;
+}
+
+.Footer-icon {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+}
+
+.Footer-icon--mail {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.Footer-link:hover {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+    /* Footer en 2 columnas para tablet */
+    .Footer-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Footer en 1 columna para movil */
+    .Footer-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .Footer-icons {
+        justify-content: center;
+    }
+
+    .Footer-brand {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+}
